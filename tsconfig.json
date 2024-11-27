@@ -3,10 +3,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@interfaces/*": ["./src/interfaces/*"],
-      "@layout/*": ["./src/layout/*"],
-      "@consts/*": ["./src/consts/*"],
-    }
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
+      "@layout/*": [
+        "./src/layout/*"
+      ],
+      "@consts/*": [
+        "./src/consts/*"
+      ]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }
