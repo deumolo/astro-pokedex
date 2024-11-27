@@ -4,6 +4,7 @@ import type { PokemonListResponse } from '@interfaces/pokemon-list.response';
 import MainLayout from '@layout/MainLayout.astro';
 import PokemonCard from '@components/pokemons/PokemonCard.astro';
 import TitleComponent from '@components/shared/TitleComponent.astro';
+import { Icon } from 'astro-icon/components';
 
 export const getStaticPaths = (async () => {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
@@ -35,11 +36,18 @@ const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/
     aria-label='Detalles de pokemon'
     class='mt-10 mx-10 flex flex-col justify-center items-center'
   >
-    <div>
-      <button onclick='history.back()' class='text-blue-500'>Regresar</button>
-      <TitleComponent>
-        {name}
-      </TitleComponent>
+    <div class='flex flex-row justify-center items-center'>
+      <div>
+        <button onclick='history.back()' class='text-blue-500'>Regresar</button>
+        <TitleComponent>
+          {name}
+        </TitleComponent>
+      </div>
+
+      <button class='ml-4' id="btn-favorite">
+        <Icon name='heart-outline' class='mt-4' size={25} />
+        <Icon name='heart-full' class='hidden mt-4' size={25} />
+      </button>
     </div>
 
     <PokemonCard name={name} url={url} isBig />
@@ -54,5 +62,9 @@ const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/
 <style>
   a {
     @apply hover:underline text-blue-500;
+  }
+
+  #btn-favorite {
+    @apply hover:animate-pulse;
   }
 </style>
