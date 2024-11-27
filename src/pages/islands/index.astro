@@ -17,5 +17,5 @@ import { Counter } from '@components/Counter';
   </div>
 
   <h2>Hola mundo</h2>
-  <Counter client:visible />
+  <Counter transition:persist="counter" client:visible initValue={20} />
 </MainLayout>
