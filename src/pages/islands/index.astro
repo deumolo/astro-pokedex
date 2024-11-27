@@ -1,0 +1,21 @@
+---
+import TitleComponent from '@components/shared/TitleComponent.astro';
+import MainLayout from '@layout/MainLayout.astro';
+import { Counter } from '@components/Counter';
+---
+
+<MainLayout title='Favorites'>
+  <TitleComponent> Islands </TitleComponent>
+
+  <div
+    style={{
+      height: '2000px',
+      backgroundColor: 'red',
+      opacity: 0.5,
+    }}
+  >
+  </div>
+
+  <h2>Hola mundo</h2>
+  <Counter client:visible />
+</MainLayout>
