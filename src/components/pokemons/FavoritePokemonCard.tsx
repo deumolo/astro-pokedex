@@ -33,7 +33,12 @@ export const FavoritePokemonCard: Component<Props> = ({ pokemon }) => {
           <p class='capitalize'>
             #{pokemon.id} - {pokemon.name}
           </p>
-          <img src={imageUrl} alt={pokemon.name} />
+          <img 
+          src={imageUrl} 
+          alt={pokemon.name}
+          width={96} 
+          height={96}
+          style={`view-transition-name: ${pokemon.name}-image`}/>
         </a>
         <button
           on:click={() => {
